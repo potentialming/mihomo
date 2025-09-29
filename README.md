@@ -47,7 +47,7 @@ export http_proxy=http://127.0.0.1:7890/
 ### 4. 验证代理
 ```bash
 # 测试代理是否生效
-curl -I https://www.google.com
+wegt www.google.com
 ```
 
 ## 文件说明
