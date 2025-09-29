@@ -1,65 +1,65 @@
-# Mihomo 代理工具使用说明
+# Mihomo Proxy Tool User Guide
 
-Mihomo 是一个高性能的代理工具，专为命令行环境设计，支持 Clash 配置格式，让你能够在终端中轻松使用代理服务。
+Mihomo is a high-performance proxy tool designed for command-line environments, supporting Clash configuration format, allowing you to easily use proxy services in the terminal.
 
-## 安装
+## Installation
 
 ```bash
 git clone https://github.com/potentialming/mihomo.git
 ```
 
-## 快速开始
+## Quick Start
 
-### 1. 准备配置文件
+### 1. Prepare Configuration File
 
-#### 从 Clash 获取现有配置
-如果您已经在使用 Clash，可以直接复制现有配置：
+#### Get Existing Configuration from Clash
+If you're already using Clash, you can directly copy the existing configuration:
 
-![Clash 配置获取](images/clash.png)
+![Clash Configuration](images/clash.png)
 
-1. 打开 Clash 客户端
-2. 点击左侧的"订阅"或"配置"选项
-3. 找到您要使用的订阅配置
-4. 右键点击该订阅
-5. 选择"编辑文件"
-6. 全选配置内容（Ctrl+A）并复制（Ctrl+C）
-7. 将复制的内容粘贴到项目目录下的 `config.yaml` 文件中
+1. Open Clash client
+2. Click on "Subscriptions" or "Profiles" option on the left
+3. Find the subscription configuration you want to use
+4. Right-click on that subscription
+5. Select "Edit File"
+6. Select all configuration content (Ctrl+A) and copy (Ctrl+C)
+7. Paste the copied content into the `config.yaml` file in the project directory
 
-### 2. 启动代理服务
+### 2. Start Proxy Service
 ```bash
-# 进入项目目录
+# Navigate to project directory
 cd /path/to/mihomo
 
-# 给程序添加执行权限
+# Add execution permission to the program
 chmod +x ./mihomo-linux-amd64-v1.18.1
 
-# 启动 mihomo（注意-d .后面有个空格）
+# Start mihomo (note there's a space after -d .)
 ./mihomo-linux-amd64-v1.18.1 -d . 
 ```
 
-### 3. 配置系统代理
-**重新打开一个新终端**，设置环境变量（端口号需与 config.yaml 中的配置保持一致）：
+### 3. Configure System Proxy
+**Open a new terminal**, set environment variables (port number should match the configuration in config.yaml):
 ```bash
 export https_proxy=http://127.0.0.1:7890/
 export http_proxy=http://127.0.0.1:7890/
 ```
 
-### 4. 验证代理
+### 4. Verify Proxy
 ```bash
-# 测试代理是否生效
-wegt www.google.com
+# Test if proxy is working
+wget www.google.com
 ```
 
-## 文件说明
-- `mihomo-linux-amd64-v1.18.1` - 主程序文件
-- `config.yaml` - 配置文件（需要替换为您的配置）
-- `Country.mmdb` - GeoIP 数据库
-- `GeoSite.dat` - 域名规则数据库
+## File Description
+- `mihomo-linux-amd64-v1.18.1` - Main program file
+- `config.yaml` - Configuration file (needs to be replaced with your configuration)
+- `Country.mmdb` - GeoIP database
+- `GeoSite.dat` - Domain rules database
 
-## 注意事项
-- 确保端口 7890 未被其他程序占用
-- 配置文件格式需要符合 mihomo 规范
-- 代理设置仅在当前终端会话有效
+## Important Notes
+- Ensure port 7890 is not occupied by other programs
+- Configuration file format must comply with mihomo specifications
+- Proxy settings are only effective in the current terminal session
 
-## 停止服务
-在运行 mihomo 的终端中按 `Ctrl+C` 停止服务。
+## Stop Service
+Press `Ctrl+C` in the terminal running mihomo to stop the service.
