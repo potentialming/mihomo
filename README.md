@@ -1,5 +1,13 @@
 # Mihomo 代理工具使用说明
 
+Mihomo 是一个高性能的代理工具，专为命令行环境设计，支持 Clash 配置格式，让你能够在终端中轻松使用代理服务。
+
+## 安装
+
+```bash
+git clone https://github.com/potentialming/mihomo.git
+```
+
 ## 快速开始
 
 ### 1. 准备配置文件
@@ -17,10 +25,6 @@
 6. 全选配置内容（Ctrl+A）并复制（Ctrl+C）
 7. 将复制的内容粘贴到项目目录下的 `config.yaml` 文件中
 
-#### 其他方式
-- 直接使用订阅链接下载配置
-- 手动编写符合 mihomo 规范的配置文件
-
 ### 2. 启动代理服务
 ```bash
 # 进入项目目录
@@ -29,12 +33,12 @@ cd /path/to/mihomo
 # 给程序添加执行权限
 chmod +x ./mihomo-linux-amd64-v1.18.1
 
-# 启动 mihomo
-./mihomo-linux-amd64-v1.18.1 -d .
+# 启动 mihomo（注意-d .号后面有个空格）
+./mihomo-linux-amd64-v1.18.1 -d . 
 ```
 
 ### 3. 配置系统代理
-**重新打开一个新终端**，设置环境变量：
+**重新打开一个新终端**，设置环境变量（端口号需与 config.yaml 中的配置保持一致）：
 ```bash
 export https_proxy=http://127.0.0.1:7890/
 export http_proxy=http://127.0.0.1:7890/
