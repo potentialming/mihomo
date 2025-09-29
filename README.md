@@ -33,7 +33,7 @@ cd /path/to/mihomo
 # 给程序添加执行权限
 chmod +x ./mihomo-linux-amd64-v1.18.1
 
-# 启动 mihomo（注意-d .号后面有个空格）
+# 启动 mihomo（注意-d .后面有个空格）
 ./mihomo-linux-amd64-v1.18.1 -d . 
 ```
 
